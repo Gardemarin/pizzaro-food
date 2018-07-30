@@ -1,0 +1,28 @@
+body {
+  color: $main-text-color;
+  background-color: $main-red;
+  font-family: 'Roboto', sans-serif;
+  width: 100%;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: $color-white;
+  text-decoration: none;
+}
+
+ hr {
+  max-width: 1170px;
+  border-style: solid;
+  margin: auto;
+  color: $color-white;
+  opacity: .4;
+ }

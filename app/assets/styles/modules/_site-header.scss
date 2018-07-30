@@ -1,0 +1,48 @@
+.site-header {
+  display: inline-block;
+  width: 100%;
+  padding-top: 34px;
+  padding-bottom: 34px;
+  background-color: $main-red;
+  &__logo {
+    padding-top: 12px;
+    float: left;
+  }
+
+  &__menu-content {    
+    float: right;
+  }
+
+  &__contacts {
+    font-family: 'Open Sans';
+    font-size: 0.875rem;
+    vertical-align: middle;    
+    display: inline-block;
+    text-align: right;
+    margin-right: 21px;
+    margin-top: 2px;
+    font-weight: 600;
+    letter-spacing: -.7px;
+
+    &__title {
+      margin-right: -6px;
+      display: inline;
+      color: $main-orange;
+
+    }
+  }
+
+  &__contact-number {
+    margin-top: 1px;
+    padding-right: 10px;
+    font-weight: 700;
+    font-size: 1.72rem;
+    color: $color-white;
+    letter-spacing: .1px;
+  }
+
+  &__order {
+    vertical-align: middle;
+    display: inline-block;
+  }
+}
