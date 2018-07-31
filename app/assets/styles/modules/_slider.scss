@@ -1,6 +1,6 @@
 .slider {
   color:  $color-white;
-  height: 660px;
+  height: 634px;
   position: relative;
   &__content {
     
@@ -8,7 +8,7 @@
     width: 100%;
     position: absolute;
     transform: translateY(-50%);
-    margin-top: -10px;
+    margin-top: -47px;
     * {
       transform: skewY(-9deg);
       text-align: center;
@@ -41,6 +41,7 @@
       font-size: 140px;
       line-height: .8;
       letter-spacing: -0.05rem;
+      text-shadow: 3px 3px 21px rgba(150, 150, 150, 0.76);
     }
 
     h2 {
@@ -49,6 +50,7 @@
       font-size: 82.06px;
       font-weight: 100;
       text-transform: uppercase;
+      text-shadow: 3px 3px 21px rgba(150, 150, 150, 0.76);
     }
 
     h3 {
@@ -90,14 +92,14 @@
   .separator--dashed {
     padding-left: 0px;
     letter-spacing: .35rem;
-    padding-bottom: 13px;
+    padding-bottom: 11px;
   }
 
   .slider__nav {
     position: absolute;
     display: inline-block;
     left: 50%;
-    bottom: 9px;
+    bottom: 32px;
     transform: translateX(-50%);    
     margin: auto;
   }
@@ -116,7 +118,7 @@
 
   .slider__nav__dot--current {
     position: absolute;
-    background-color: $color-lite-red;
+    background-color: $color-red--lite;
     width: 36px;
     border-radius: 50px;
     height: 10px;
