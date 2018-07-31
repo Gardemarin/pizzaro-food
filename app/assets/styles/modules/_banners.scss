@@ -1,0 +1,140 @@
+.banner {
+  background-color: #fff;
+
+  &--large {
+    .banner__content{
+      background: url('http://via.placeholder.com/570x442') top center no-repeat;
+      background-size: cover;
+      height: 442px;
+      padding: 48px 38px;
+
+      heading {
+        text-transform: uppercase;
+        font-family: $font-header;
+        color: $color-white;
+        
+        h1 {
+          letter-spacing: -.05rem;
+          margin: 0;
+          padding: 0;
+          line-height: 4rem;
+          font-size: 5rem;
+          font-weight: 700;
+          text-shadow: 3px 3px 21px rgba(150, 150, 150, 0.76);
+        }
+        h2 {
+          line-height: 3rem;
+          margin: 0;
+          letter-spacing: -.035rem;
+          font-family: $font-header;
+          font-weight: 200;
+          font-size: 2.625rem;
+          text-shadow: 3px 3px 21px rgba(150, 150, 150, 0.76);
+        }
+        button {
+          margin-top: 17px;
+          margin-left: 2px;
+        }
+      }
+    }
+  }
+
+  &--small {
+    .banner__content{
+      background: url('http://via.placeholder.com/270x210') top center no-repeat;
+      background-size: cover;
+      height: 210px;
+      padding: 28px 38px;
+
+      heading {
+        float: right;
+        text-align: center;
+        text-transform: uppercase;
+        font-family: $font-header;
+        color: $color-white;
+        margin-right: -12px;
+        
+        h1 {
+          letter-spacing: -.05rem;
+          margin: 0;
+          padding: 0;
+          line-height: 3.4rem;
+          font-size: 3.6rem;
+          font-weight: 700;
+          padding-bottom: 10px;
+          
+        }
+        h2 {
+          line-height: 2.5rem;
+          margin: 0;
+          letter-spacing: -.035rem;
+          font-family: $font-header;
+          font-weight: 200;
+          font-size: 3rem;
+          
+        }
+        p {
+          font-family: $font-secondary;
+          letter-spacing: .04rem;
+          padding: 0;
+          margin: 0;
+          text-transform: lowercase;
+          &.exception {
+            line-height: 1.8rem;
+            font-family: $font-header;
+            color: $color-white;
+            text-transform: uppercase;
+            text-shadow: 3px 3px 21px rgba(150, 150, 150, 0.76);
+          }
+        }
+      }
+    }
+  }
+
+  &--landscape {
+    .banner__content{
+      background: url('http://via.placeholder.com/570x210') top center no-repeat;
+      background-size: cover;
+      height: 210px;
+      position: relative;
+      heading {
+        text-align: center;
+        text-transform: uppercase;
+        font-family: $font-header;
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: $color-white;
+        padding-right: 13px;
+
+        h1 {
+          font-family: $font-third;
+          display: inline;
+          letter-spacing:-.16rem;
+          margin: 0;
+          padding: 0;
+          font-size: 4rem;
+          font-weight: 700;
+          padding-bottom: 10px;
+          text-shadow: 3px 3px 21px rgba(150, 150, 150, 0.76);
+        }
+        h3 {
+
+          display: inline-block;
+          line-height: 2.5rem;
+          margin: 0;
+          margin-right: 5px;
+          padding-top: 7px;
+          letter-spacing: -.05rem;
+          font-family: $font-third;
+          font-weight: 200;
+          font-size: 2.3rem;
+          vertical-align: top;
+          color: $main-orange;
+          
+        }
+      }
+    }
+  }
+}
