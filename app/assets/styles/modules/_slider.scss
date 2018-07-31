@@ -1,0 +1,125 @@
+.slider {
+  color:  $color-white;
+  height: 660px;
+  position: relative;
+  &__content {
+    
+    top: 50%;
+    width: 100%;
+    position: absolute;
+    transform: translateY(-50%);
+    margin-top: -10px;
+    * {
+      transform: skewY(-9deg);
+      text-align: center;
+    }
+
+    .line--left {
+      border-top: 1px solid $color-white;
+      width: 66px;
+      height: 10px;
+      transform: skewY(0deg);
+      display: inline-block;
+      margin-right: 10px;
+      
+      margin-left: 80px;
+    }
+
+    .line--right {
+      border-top: 1px solid $color-white;
+      width: 125px;
+      height: 10px;
+      transform: skewY(0deg);
+      display: inline-block;
+      margin-left: 25px;
+    }
+
+    h1 {
+      margin: 0;
+      margin-top: -30px;
+      font-family: $font-header;
+      font-size: 140px;
+      line-height: .8;
+      letter-spacing: -0.05rem;
+    }
+
+    h2 {
+      margin: 0;
+      font-family: $font-header;
+      font-size: 82.06px;
+      font-weight: 100;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      font-family: $font-header;
+      font-size: 30.02px;
+      text-transform: uppercase;
+      font-weight: 300;
+      // margin-top: 3px;
+      margin-left: -76px;
+      span {
+        padding-right: 20px;
+        font-weight: 400;
+        font-size: 25px;
+        letter-spacing: .1rem;
+      }
+    }
+
+    p {
+      font-weight: 300;
+      font-family: $font-header;
+      font-size: 22px;
+      letter-spacing: .03rem;
+      margin: 0;
+      text-transform: capitalize;
+    }
+
+    .circle {
+      transform: skewY(0deg);
+      border-radius: 50%;
+      top: 9%;
+      left: 35.8%;
+      width: 64px;
+      height: 64px;
+      background-color: $main-orange;
+      position: absolute;
+    }
+  }
+
+  .separator--dashed {
+    padding-left: 0px;
+    letter-spacing: .35rem;
+    padding-bottom: 13px;
+  }
+
+  .slider__nav {
+    position: absolute;
+    display: inline-block;
+    left: 50%;
+    bottom: 9px;
+    transform: translateX(-50%);    
+    margin: auto;
+  }
+
+  .slider__nav__dot {
+    margin-right: 16px;
+    &:last-child {
+      margin-right: 0px;
+    }
+    width: 10px;
+    height: 10px;
+    border-radius: 50px;
+    background-color: $color-white;
+    float: left;
+  }
+
+  .slider__nav__dot--current {
+    position: absolute;
+    background-color: $color-lite-red;
+    width: 36px;
+    border-radius: 50px;
+    height: 10px;
+  }
+
+}
