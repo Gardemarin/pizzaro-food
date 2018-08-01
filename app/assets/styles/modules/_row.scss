@@ -54,7 +54,7 @@
     margin-bottom: 1rem;
   }
 
-  @include at-medium {
+  // @include at-medium {
 
     &__b-margin-until-medium {
       margin-bottom: 0;
@@ -62,7 +62,11 @@
 
     &__medium-4 {
       float: left;
-      width: 33.33%;
+      width: 31.5%;
+      margin-right: 2.7%;
+      &:last-child {
+        margin-right: 0;
+      }
     }
 
     &__medium-4--larger {
@@ -83,7 +87,7 @@
       width: 63%;
     }
 
-  }
+  // }
 
   @include at-large {
 

@@ -1,0 +1,126 @@
+.products-tabs {
+  background-color: $color-white;
+
+  &__content {
+    padding-top: 30px;
+    padding-bottom: 70px;
+  }
+  
+
+  &__item {
+
+    margin: auto;
+
+    border: solid 5px #ccc;
+    &__image {
+      margin: auto;
+      display: block;
+    }
+
+    &__content {
+      display: block;
+      width: 80%;
+      margin: auto;
+      
+    }
+    &__title {
+      text-align: center;
+      letter-spacing: -0.02rem;
+      line-height: 1.3rem;
+      color: #2d2b2d;
+      font-family: $font-fourth;
+      text-transform: capitalize;
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 16px;
+    }
+
+    &__description {
+      color: #71706c;
+      font-family: $font-fourth;
+      text-align: center;
+      font-size: .9rem;
+      word-spacing: .08rem;
+      font-style: italic;
+      line-height: 1.45rem;
+      margin: auto;
+    }
+
+    &__divider {
+      font-size: .85rem;
+      padding: 34px 0px 30px; 
+      text-align: center;
+      text-transform: capitalize;
+      color: #2b2929;
+      white-space: nowrap;
+      & > div {
+        display: inline-block;
+        opacity: .1;
+        width: 29%;
+        height: 5px;
+        margin: 0px 10px;
+        border-top: solid 1px #2b2929;
+      }
+    }
+
+    &__pizza {
+      display: inline-block;
+      margin-left: 12px;
+      margin-right: 9px;
+      &--size {
+        vertical-align: middle;
+        border: 1px solid rgba($main-orange, .5);
+        padding: 10px 13px;
+        border-radius: 50px;
+        display: inline-block;
+        text-align: center;
+        font-size: .73rem;
+        font-weight: 700;
+        font-family: $font-fourth;
+        margin-right: 7px;
+        margin-top: -6px;
+      }
+      &--diagonal {
+        display: block;
+        width: 100%;
+      }
+
+      &--unit {
+        width: 100%;
+        display: block;
+      }
+
+      &--price {
+        line-height: 2.7rem;
+        font-family: $font-fourth;
+        display: inline-block;
+        font-size: 1.2rem;
+        sup {
+          font-size: .8rem;
+        }
+      }
+
+    }
+
+    &__button {
+      position: relative;
+      padding: 35px;
+      font-size: 1rem;
+      button {
+        position: relative;
+      }
+      &--icon {
+        position: absolute;
+        display: inline-block;
+        height: 20px;
+        top: 19px;
+        left: 65px;
+      }      
+    }
+  }
+
+.product {
+  text-align: center;
+}  
+  
+}
