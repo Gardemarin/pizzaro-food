@@ -1,16 +1,31 @@
 .btn {
-  background-color: grey;//$color-red--lite;
-  opacity: 0.5;
+  background-color: $color-red--lite;
+  // opacity: 0.5;
   color: $color-white;
   display: inline-block;
   text-decoration: none;
   border: 0;
-  padding: 21px 65px 18px 100px;
+  font-family: $font-fourth;
+
+  &__day-deal {
+    padding: 20px 67px 17px 64px;
+    text-transform: capitalize;
+    font-size: .93rem;
+    letter-spacing: .04rem;
+    margin-right: 1px;
+  }
+
+  &__product {
+    letter-spacing: 0px;
+    margin: 0px;
+    text-transform: none;
+    font-size: 1rem;
+    padding: 21px 65px 18px 100px;
+  }
 
   &__order {
     font-size: 0.875rem;
     font-weight: 600;
-    font-family: 'Open Sans';
     letter-spacing: .18px;
     padding: 23px 25px 0px 60px;
     background-color: $main-green;
@@ -52,6 +67,10 @@
 
   &--rounded--small {
     border-radius: 10px;
+  }
+
+  &--rounded--xsmall {
+    border-radius: 5px;
   }
 
   &--header {
