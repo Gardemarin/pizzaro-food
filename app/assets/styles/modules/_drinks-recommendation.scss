@@ -1,0 +1,119 @@
+.drinks-recommendation {
+  background-color: green;//$color-white;
+  text-align: center;
+  padding-bottom: 100px;
+  &__headings {
+    border-bottom: 1px solid  #e9e9e9;
+    margin: 10px 0 70px;
+    text-align: center;
+  }
+
+  &__title {
+    display: inline-block;
+    text-transform: capitalize;
+    padding-bottom: 15px;
+    font-family: $font-fourth;
+    font-size: 1.625rem;
+    font-weight: 400;
+    margin: 0;
+    padding-bottom: 16px;
+    position: relative;
+
+    &--underline {
+      position: absolute;
+      margin-top: 15px;
+      height: 2px;
+      width: 57%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: $color-red--lite;
+    }
+  } 
+
+  .product {
+    border: solid 0.29rem #e9e9e9;
+
+    &__title {
+      text-align: center;
+      font-weight: 400;
+      font-family: $font-fourth;
+      text-transform: capitalize;
+      font-size: 1.3125rem;
+      margin-top: 12px;
+      margin-left: 0.1rem;
+      word-spacing: -.05rem;
+    }
+
+    &__divider {
+      font-family: $font-fourth;
+      text-transform: capitalize;
+      text-align: center;
+      font-size: .9rem;
+      margin: 35px 0 19px;
+      & > div {
+        display: inline-block;
+        width: 30%;
+        margin: 5px 10px;
+        border-top: solid 1px #e9e9e9;
+      }
+    }
+
+    &__container {
+      display: inline-block;
+      padding-bottom: 30px;
+      position: relative;
+    }
+
+    &__item {
+      &:nth-child(2) {
+        margin: 0px 0 0 10px;
+      }
+      margin: 0;
+      display: inline-block;
+    }
+
+    &__size {
+      width: 46px;
+      height: 46px;
+      display: inline-block;
+      border: solid 1px orange;
+      padding: 10px 12px 8px 12px;
+      border-radius: 30px;
+      text-align: center;
+      margin-right: 5px;
+    }
+
+    &__amount {
+      font-family: $font-fourth;
+      font-size: .75rem;
+      font-weight: 700;
+    }
+
+    &__unit {
+      font-size: .75rem;
+      font-weight: 400;
+    }
+
+    &__price {
+      display: inline-block;
+      font-size: 1.1rem;
+      padding-right: 6px;
+      margin-top: -2px;
+      margin-left: -2px;
+    }
+
+    
+
+    &__button {
+      display: none;
+      margin: 30px 0 5px;
+      &--icon {
+        padding-right: 10px;
+        vertical-align: middle;
+        margin-bottom: 5px;
+        height: 20px;
+        width: auto;
+      }
+    }
+  }
+}
