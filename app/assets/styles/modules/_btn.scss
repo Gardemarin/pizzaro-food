@@ -1,6 +1,5 @@
 .btn {
   background-color: $color-red--lite;
-  // opacity: 0.5;
   color: $color-white;
   display: inline-block;
   text-decoration: none;
@@ -13,6 +12,20 @@
     font-size: .93rem;
     letter-spacing: .04rem;
     margin-right: 1px;
+  }
+
+  &__product-slider {
+    width: 53%;
+    padding-top: 22px;
+    padding-bottom: 18px;
+    font-size: .93rem;
+    letter-spacing: .01rem;
+    &--icon {
+      margin-top: -4px;
+      vertical-align: middle;
+      margin-right: 17px;
+      height: 21px;
+    }
   }
 
   &__product {

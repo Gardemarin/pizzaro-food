@@ -1,0 +1,92 @@
+.product-slider {
+  background-color: #f4f2eb;
+
+  &__container {
+    text-align: center;
+    margin-bottom: 8px;
+    margin-top: -8px;
+  }
+
+  &__heading {
+    display: block;
+    margin-bottom: 30px;
+  }
+
+  &__title {
+    font-family: $font-fourth;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    margin-left: 3px;
+    margin-bottom: 15px;
+  }
+
+  &__description {
+    margin: auto;
+    width: 70%;
+    word-spacing: .1rem;
+    letter-spacing: .009rem;
+    font-style: italic;
+    font-size: .875rem;
+    line-height: 1.44rem;
+    font-family: $font-fourth;
+  }
+
+  &__divider {
+    text-transform: capitalize;
+    font-family: $font-fourth;
+    font-size: .875rem;
+    & > div {
+      border-top: solid 1px #c8c6bc;
+      width: 30%;
+      display: inline-block;
+      margin: 0 10px;
+      padding-bottom: 4px;
+    }
+  }
+
+  &__info {
+  }
+
+  &__item {
+    display: inline-block;
+    margin: 10px;
+    margin-top: 30px;
+    margin-left: 12px;
+  }
+
+  &__parameter {
+    height: 46px;
+    width: 46px;    
+    border: solid 1px $main-orange;
+    border-radius: 30px;
+    padding: 8px 5px;
+    display: inline-block;
+    margin-right: 6px;
+    text-align: center;
+    transform: translateY(2px);
+  }
+
+  &__size {
+    font-size: .8125rem;
+    font-weight: 600;
+    line-height: .9rem;
+  }
+
+  &__unit {
+    font-size: .8125rem;
+    line-height: .6rem;
+  }
+
+  &__price {
+    display: inline-block;
+    font-size: 1.25rem;
+    sup {
+      font-size: .81rem;
+    }
+  }
+
+  &__button {
+    margin-top: 25px;
+  }
+}
