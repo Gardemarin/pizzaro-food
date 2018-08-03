@@ -1,0 +1,32 @@
+.features {
+  background-color: $color-white;
+  padding-bottom: 120px;  
+  &__container {
+    text-align: center;
+    display: block;
+  }
+
+  &__image {
+    padding-top: 63px;
+    height: 125px;
+    padding-bottom: 111px;
+    margin-bottom: -9px;
+  }
+
+  &__title {
+    margin-bottom: 7px;
+    text-transform: capitalize;
+    font-family: $font-fourth;
+    font-weight: 300;
+  }
+
+  &__description {
+    line-height: 1.35rem;
+    color: #71706c;
+    word-spacing: -.07rem;
+    letter-spacing: -.05rem;
+    margin: auto;
+    width: 80%;
+    font-family: $font-fourth;
+  }
+}
