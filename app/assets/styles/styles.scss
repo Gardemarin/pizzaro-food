@@ -1,4 +1,5 @@
 @import '../../../node_modules/normalize-scss/sass/normalize/import-now';
+@import '../../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome';
 
 @import 'base/template';
 // @import 'base/debug';
@@ -17,7 +18,7 @@
 // @import 'modules/feature-item';
 // @import 'modules/testimonial';
 @import 'modules/sprite.scss';
-// @import 'modules/site-footer';
+@import 'modules/site-footer';
 @import 'modules/site-header';
 @import 'modules/food-nav';
 @import 'modules/primary-nav';
