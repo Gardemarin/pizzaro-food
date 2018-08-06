@@ -3,40 +3,74 @@
   background-size: cover;
   color: $color-white;
   text-align: center;
+
+  padding: 40px 0;
+
+  @include at-medium {
+    padding: 60px 0px 60px;
+  }
+
   
   .day-deal__description  {
     display: inline-block;
-    margin: 38px 0;
+
+    @include at-medium{
+      margin: 38px 0;
+    }
   }
 
   &__subtitle {
     font-family: $font-header;
-    font-size: 1.35rem;
+    font-size: 1.1rem;
     letter-spacing: .07rem;
     font-weight: 200;
     text-transform: uppercase;
     margin: 0;
     word-spacing: .05rem;
+
+    @include at-medium {
+      font-size: 1.35rem;
+    }
+
     & > div {
-      display: inline-block;
-      width: 27%;
+      display: block;
       border-top: 1px solid $color-white;
-      height: 8px;
+      width: 20%;
+      float: left;
+      margin-top: 8px;
+      &:last-child {
+        float: right;
+      }
+
+      @include at-medium {
+        width: 27%;
+        margin-top: 12px;
+      }
     }
   }
 
   &__title {
     word-spacing: .2rem;
-    font-size: 4.5625rem;
     font-weight: 700;
     margin: 0;
-    margin-top: -8px;
     font-family: $font-header;
     text-transform: uppercase;
+    font-size: 2.95rem;
+
+    @include at-medium {
+      margin-top: -8px;
+      font-size: 4.5625rem;
+    }
   }
 
   &__price {
-    margin-left: 34px;
+    margin-bottom: 10px;
+
+    @include at-medium {
+      margin-left: 34px;
+      margin-bottom: 37px;
+    }
+
     &--currency {
       font-family: $font-header;
       font-size: 5.625rem;
@@ -106,6 +140,9 @@
   }
 
   &__btn-order {
-    margin: 37px 0 -20px;
+    // margin: 37px 0 -20px;
+    @include at-medium {
+      margin-bottom: -20px;
+    }
   }
 }

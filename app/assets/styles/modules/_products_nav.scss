@@ -13,7 +13,12 @@
     li {
       float: left;
       list-style-type: none;
-      margin-right: 60px;
+      margin-right: 30px;
+
+      @include at-medium {
+        margin-right: 60px;
+      }
+
       &:last-child {
         margin-right: 0px;
       }
@@ -25,25 +30,42 @@
       position: relative;
       color: #9b959b;
       text-decoration: none;
-      font-size: 1.65rem;
       text-transform: capitalize;
       font-family: $font-fourth;
       font-weight: 300;
+      font-size: 1rem;
+
+      @include at-medium {
+        font-size: 1.65rem;
+      }
     }
 
     &--active {
-      font-weight: 800;
-      letter-spacing: .04rem;
+
+      a {
+        font-size: 1rem;
+        font-weight: 600;
+        letter-spacing: .04rem;
+
+        @include at-medium {
+          line-height: 1.9rem;
+          font-size: 1.55rem;
+        }
+      }
 
       .products-nav__item--underline {
-        bottom: -15px;
         height: 3px;
+        bottom: -17px;
         background-color: $color-red--lite;
         width: 60px;
         left: 50%;
         transform: translateX(-50%);
         margin: auto;
         position: absolute;
+
+        @include at-medium {
+          bottom: -16px;
+        }
       }
     }
   }
