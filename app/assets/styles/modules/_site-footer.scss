@@ -1,0 +1,137 @@
+.site-footer {
+  background-color: #2c2c2c;
+  text-align: center;
+  padding-top: 20px;
+
+  @include at-medium {
+    padding-top: 89px;
+  }
+
+  &__socials {
+    display: inline-block;
+  }
+
+  &__socials {
+    &__icon {
+      float: left;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      color: $color-white;
+      font-size: 1rem;
+      padding-top: 7px;
+      margin: 0 5px;
+      border: solid 1px $color-white;
+
+      @include at-medium {
+        border-width: 2px;
+        margin: 0 12px;
+        padding-top: 17px;
+        font-size: 1.3rem;
+        width: 54px;
+        height: 54px;
+      }
+    }
+  }
+
+  &__logo {
+    padding: 20px 0;
+    .icon--logo {
+      background-size: 100%;
+      width: 150px;
+      height: 40.65px;
+      @include at-medium {
+        width: 203px;
+        height: 54.65px;
+      }
+    }
+    @include at-medium {
+      padding: 50px 0px 53px;
+    }
+    .icon {
+      margin: auto;
+    }
+  }
+  
+  &__contacts address {
+   color: #dddddd;
+   font-family: $font-fourth;
+   font-size: .875rem;
+   font-style: normal;
+   padding: 14px 0px;
+   text-align: center;
+   width: 160px;
+   margin: auto;
+
+   @include at-medium {
+     font-size: 1.15rem;
+     width: 100%;
+     font-weight: 300;
+   }
+
+   @include at-large {
+     font-weight: 400;
+     font-size: .875rem;
+   }
+  }
+
+  &__comma {
+    display: block;
+    @include at-large {
+      display: inline-block;
+      &::before {
+        content: ',';
+      }
+    }
+  }
+
+  &__break {
+    display: block;
+    @include at-medium {
+      display: inline-block;
+    }
+  }
+
+  &__divider {
+    display: block;
+    height: 10px;
+    @include at-large {
+      border-left: solid 1px #7f1e2a;
+      border-right: solid 1px #a11528;
+      transform: translateY(3px);
+      margin: 0 21px;
+      height: 14px;
+      display: inline-block;
+    }
+  }
+
+  &__copy {
+    color:  #7f7f7f;
+    font-family: $font-fourth;
+    font-size: .875rem;
+    letter-spacing: -.029rem;
+    margin-bottom: 40px;
+
+    @include at-medium {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__btn {
+    font-size: .875rem;
+    font-family: $font-fourth;
+    padding-right: 47px;
+    padding-left: 40px;
+    padding-top: 21px;
+    padding-bottom: 16px;
+    letter-spacing: .05rem;
+    border-radius: 20px 20px 0px 0px;
+    background-color: $color-red--lite;
+
+    &-icon {
+      margin-right: 13px;
+      font-size: 1.5rem;
+      vertical-align: middle;
+    }
+  }
+}

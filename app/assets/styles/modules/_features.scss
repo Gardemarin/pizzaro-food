@@ -1,7 +1,15 @@
 .features {
   background-color: $color-white;
-  padding-bottom: 120px;  
+  padding: 0px 0px 60px;
+
+  @include at-medium {
+    padding-top: 58px;
+    padding-bottom: 120px;  
+  }
+  
   &__container {
+    max-width: 300px;
+    margin: auto;
     text-align: center;
     display: block;
   }
@@ -26,7 +34,10 @@
     word-spacing: -.07rem;
     letter-spacing: -.05rem;
     margin: auto;
-    width: 80%;
     font-family: $font-fourth;
+
+    @include at-medium {
+      width: 80%;
+    }
   }
 }

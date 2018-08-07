@@ -1,5 +1,9 @@
 .product-slider {
   background-color: #f4f2eb;
+  padding: 20px 0 30px;
+  @include at-medium {
+    padding: 61px 0;
+  }
 
   &__container {
     text-align: center;
@@ -89,5 +93,11 @@
 
   &__button {
     margin-top: 25px;
+    .btn {
+      width: 80%;
+      @include at-large {
+        width: 53%;
+      }
+    }
   }
 }
