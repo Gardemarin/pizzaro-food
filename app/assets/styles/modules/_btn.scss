@@ -1,4 +1,4 @@
-.btn {
+  .btn {
   background-color: $color-red--lite;
   color: $color-white;
   display: inline-block;
@@ -45,19 +45,40 @@
   }
 
   &__order {
-    font-size: 0.875rem;
-    font-weight: 600;
-    letter-spacing: .18px;
-    padding: 23px 25px 0px 60px;
-    background-color: $main-green;
+    font-weight: 200;
+    background-color: transparent;// $main-green;
     position: relative;
+    // padding: 10px 15px 10px 15px;
+
+    @include at-medium {
+      background-color: $main-green;
+      letter-spacing: .18px;
+      font-weight: 600;
+      font-size: 0.875rem;
+      padding: 23px 25px 0px 60px;
+    }
     
     &--icon {
       position: absolute;
-      display: inline-block;
+      display: none;
       height: 23px;
-      top: 16px;
-      left: 22px;
+      top: 15px;
+      left: 15px;
+      
+      @include at-medium {
+        display: inline-block;
+        top: 16px;
+        left: 22px;
+      }
+    }
+
+    .arrow-double {
+      div {
+        margin-bottom: -13px;
+      }
+      @include at-medium {
+        display: none;
+      }
     }
 
     &--underline {
@@ -65,10 +86,15 @@
       margin: auto;
       margin-top: 10px;
       margin-left: -16px;
-      width: 8.5rem;
       overflow: hidden;
       white-space: nowrap;
       position: relative;
+      width: 6rem;
+      display: none;
+      @include at-medium {
+        display: block;
+        width: 8.5rem;
+      }
 
       img {
         position: relative;

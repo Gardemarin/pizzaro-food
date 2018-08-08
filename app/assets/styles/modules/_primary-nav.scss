@@ -1,7 +1,16 @@
 .primary-nav {
   display: inline-block;
   padding-top: 27px;
-  padding-left: 7px;
+  text-align: center;
+  
+  @include at-medium {
+    padding-left: 7px;
+    float: right;
+  }
+
+  @include at-large {
+    float: left;
+  }
 
   ul {
     margin: 0;
@@ -11,8 +20,26 @@
 
   li {
     list-style: none;
-    display: inline;
-    padding-left: 43px;
+    display: inline-block;
+    padding: 8px 13px;
+    border: solid 1px rgba(253, 129, 129, .9);
+    margin: 5px 5px 10px 5px;
+
+
+
+    @include at-medium {
+      margin: 0 0 0 43px;
+      padding: 0;
+      border: none;
+    }
+
+    @include at-large {
+      margin: 0 0 0 10px;
+    }
+
+    @media (min-width: 1170px) {
+      margin: 0 0 0 43px;
+    }
   }
 
   &__underline {
