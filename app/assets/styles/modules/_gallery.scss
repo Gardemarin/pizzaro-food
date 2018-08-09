@@ -1,6 +1,10 @@
 .gallery {
+  margin-bottom: -4px;
+  
   &__image {
-    width: 320px;
-    height: 320px;
+    img {
+      height: auto;
+      width: 100%;
+    }
   }
 }

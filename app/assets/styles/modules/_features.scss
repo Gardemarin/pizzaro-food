@@ -8,10 +8,18 @@
   }
   
   &__container {
-    max-width: 300px;
+    max-width: 60%;
     margin: auto;
     text-align: center;
     display: block;
+
+    @include at-small {
+      min-width: 80%;
+    }
+
+    @include at-medium {
+      min-width: 90%;
+    }
   }
 
   &__image {

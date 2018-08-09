@@ -56,7 +56,8 @@
 
   @include at-small {
     &__small-6 {
-      width: 48%;
+      width: 50%;
+      float: left;
       &:last-child {
         margin-right: 0;
       }
