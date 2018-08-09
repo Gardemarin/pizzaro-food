@@ -10,6 +10,11 @@
     width: 50%;
   }
 
+  &-4 {
+    float: left;
+    width: 33.333%;
+  }
+
   &--pull-right {
     float: right;
   }
@@ -72,6 +77,12 @@
       padding-right: 15px;
     }
 
+
+    &__small-3 {
+      float: left;
+      width: 25%;
+    }
+    
     &__small-6 {
       width: 50%;
       float: left;
@@ -82,6 +93,21 @@
 
     &--gutters-small--left {
       padding-left: 15px;
+    }
+
+  }
+
+  &__small--display {
+    display: none;
+    @include at-small {
+      display: block;
+    }
+  }
+
+  &__medium--display {
+    display: none;
+    @include at-medium {
+      display: block;
     }
   }
 
@@ -111,6 +137,11 @@
     &__medium--pull-left {
       float: left;
     }
+
+    &__medium-2 {
+      width: 16.666%;
+      float: left;
+    }
   }
 
   @include at-large {
@@ -138,10 +169,7 @@
       margin-bottom: 0;
     }
 
-    &__medium-2 {
-      width: 16.666%;
-      float: left;
-    }
+
 
     &__medium-4--larger {
       width: 37%;
