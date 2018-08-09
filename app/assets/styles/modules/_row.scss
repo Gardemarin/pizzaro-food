@@ -2,6 +2,14 @@
 
   @include clearfix;
 
+  &-12 {
+    width: 100%;
+  }
+
+  &-6 {
+    width: 50%;
+  }
+
   &--pull-right {
     float: right;
   }
@@ -10,17 +18,13 @@
     float: left;
   }
 
-  &--gutters-small--left {
-    padding-left: 15px;
-  }
 
-  &--gutters-small--right {
-    padding-right: 15px;
-  }
 
-  &--gutters-small--bottom {
+  &--gutters--bottom {
     padding-bottom: 20px;
   }
+
+
 
   &--t-padding {
     padding-top: 80px;
@@ -54,7 +58,20 @@
     margin-bottom: 1rem;
   }
 
+  &__small-12 {
+    width: 100%;
+  }
+
   @include at-small {
+
+    &--gutters-small--bottom {
+      padding-bottom: 20px;
+    }
+
+    &--gutters-small--right {
+      padding-right: 15px;
+    }
+
     &__small-6 {
       width: 50%;
       float: left;
@@ -62,11 +79,37 @@
         margin-right: 0;
       }
     }
+
+    &--gutters-small--left {
+      padding-left: 15px;
+    }
   }
 
   @include at-medium {
+
+    &--gutters-medium--right {
+      padding-right: 15px;
+    }
+
+    &--gutters-medium--left {
+      padding-right: 15px;
+    }
+
+    &__medium-6 {
+      // float: left;
+      width: 50%;
+    }
+
     &__medium-5 {
       width: 40.2%;
+    }
+
+    &__medium--pull-right {
+      float: right;
+    }
+
+    &__medium--pull-left {
+      float: left;
     }
   }
 
@@ -95,10 +138,6 @@
       margin-bottom: 0;
     }
 
-
-
-
-
     &__medium-2 {
       width: 16.666%;
       float: left;
@@ -106,13 +145,6 @@
 
     &__medium-4--larger {
       width: 37%;
-    }
-
-
-
-    &__medium-6 {
-      // float: left;
-      width: 50%;
     }
 
     &__medium-8 {

@@ -1,7 +1,15 @@
 .banner {
-  background-color: #fff;
+  background-color: $color-white;
+
+  padding: 61px 0 40px;
 
   &--large {
+    padding-bottom: 20px;
+
+    @include at-medium {
+      padding-right: 15px;
+    }
+
     .banner__content{
       background: url('http://via.placeholder.com/570x442') top center no-repeat;
       background-size: cover;
@@ -39,7 +47,14 @@
     }
   }
 
+  &--small:first-child {
+    @include at-small {
+      padding-right: 15px;
+    }
+  }
+
   &--small {
+    padding-bottom: 20px;
     .banner__content{
       background: url('http://via.placeholder.com/270x210') top center no-repeat;
       background-size: cover;
