@@ -1,0 +1,32 @@
+@mixin at-small {
+  @media (min-width: 425px) {
+  // @media (min-width: 530px) {
+    @content;
+  }
+}
+
+@mixin at-medium {
+  @media (min-width: 768px) {
+  // @media (min-width: 800px) {
+    @content;
+  }
+}
+
+@mixin at-large {
+  @media (min-width: 1024px) {
+  // @media (min-width: 1010px) {
+    @content;
+  }
+}
+
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+}
+
+@mixin rgba() {
+  @content;
+}
