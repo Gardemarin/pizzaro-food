@@ -1,7 +1,32 @@
 .primary-nav {
-  display: inline-block;
+  
   padding-top: 27px;
   text-align: center;
+
+  
+    // display: inline-block;
+    // display: none;
+  opacity: 0;
+  transform: scale(1.2);
+  transition: all .3s ease-out;
+  position: relative;
+  z-index: -10;
+  max-height: 0px;
+
+  @mixin atMedium {
+    display: inline-block;
+    opacity: 1;
+    z-index: 1;
+    padding-top: 0;
+    transform: scale(1);
+  }
+
+  &--is-visible {
+    max-height: 1000px;
+    opacity: 1;
+    z-index: 1;
+    transform: scale(1);
+  }
   
   @include at-medium {
     padding-left: 7px;
@@ -11,6 +36,8 @@
   @include at-large {
     float: left;
   }
+
+
 
   ul {
     margin: 0;

@@ -22,7 +22,7 @@
 </head>
 <body>
  <div class="template">
-    <img src="./assets/images/01-HomePage copy-01.png" alt="template with extra">
+    <!-- <img src="./assets/images/01-HomePage copy-01.png" alt="template with extra"> -->
     <!-- <img src="./assets/images/01-HomePage no extra-01.png" alt="template with no extra"> -->
   </div>
 
@@ -31,7 +31,12 @@
       <div class="site-header__logo">
         <div class="icon icon--logo"></div>
       </div>
-      <nav class="primary-nav">
+      
+      <div class="site-header__menu-icon">
+          <div class="site-header__menu-icon__middle"></div>
+      </div>
+<div class="site-header__menu">
+      <nav class="primary-nav primary-nav--is-visible">
           <ul>
             <li>
               <a class="primary-nav__link primary-nav__link--active" href="#">Order Online<span class="primary-nav__underline"></span></a>
@@ -47,6 +52,7 @@
             </li>
           </ul>
         </nav>
+
       <div class="site-header__menu-content">
 
           <div class="site-header__contacts">
@@ -64,14 +70,30 @@
               <div class="site-header__contact-number">54 548 779 654</div> 
           </div>
           <div class="site-header__order-table">
-            <a href="#" class="">
+            <div class="">
                 Your Order  
-                <span class="site-header__order-table__arrow">
-                  <div><span class="icon__arrow icon__arrow--down"></span></div>
-                  <div><span class="icon__arrow icon__arrow--down"></span></div>
-                  <div><span class="icon__arrow icon__arrow--down"></span></div>
-                </span>
-            </a>
+
+                <div class="site-header__order-list">
+                    <div class="site-header__order-list--empty">is empty</div>
+                </div>
+            </div>
+
+            <div class="site-header__order-table__decoration">
+                <div class="site-header__order__circle"></div>
+
+                <div class="site-header__order-list__button">
+
+                  <img src="assets/images/icons/sliced-pizza.svg" alt="spikes">
+
+                </div>
+                <!-- <div><i class="fas fa-stroopwafel"></i></div> -->
+                <!-- <div class="site-header__order-table__arrow">
+                    <div><div class="icon__arrow icon__arrow--down"></div></div>
+                    <div><div class="icon__arrow icon__arrow--down"></div></div>
+                    <div><div class="icon__arrow icon__arrow--down"></div></div>
+                  </div> -->
+
+            </div>
           </div>
           <button class="site-header__order btn btn__order btn--rounded">
               <img class="btn__order--icon" src="assets/images/icons/motoroler.svg" alt="motoroler"></img>
@@ -81,6 +103,7 @@
               </div>
           </button>
       </div>
+    </div>
     </div>
   </header>
   <section class="large-hero">
