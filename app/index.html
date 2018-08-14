@@ -22,7 +22,7 @@
 </head>
 <body>
  <div class="template">
-    <!-- <img src="./assets/images/01-HomePage copy-01.png" alt="template with extra"> -->
+    <img src="./assets/images/01-HomePage copy-01.png" alt="template with extra">
     <!-- <img src="./assets/images/01-HomePage no extra-01.png" alt="template with no extra"> -->
   </div>
 
@@ -30,10 +30,6 @@
     <div class="wrapper ">
       <div class="site-header__logo">
         <div class="icon icon--logo"></div>
-      </div>
-      
-      <div class="site-header__menu-icon">
-          <div class="site-header__menu-icon__middle"></div>
       </div>
 <div class="site-header__menu">
       <nav class="primary-nav primary-nav--is-visible">
@@ -45,10 +41,10 @@
               <a class="primary-nav__link" href="#">About<span class="primary-nav__underline"></span></a>
             </li>
             <li>
-              <a class="primary-nav__link" href="#">News<span class="primary-nav__underline"></span></a>
+              <a class="primary-nav__link primary-nav__link--active" href="#">News<span class="primary-nav__underline"></span></a>
             </li>
             <li>
-              <a class="primary-nav__link" href="#">Store locator<span class="primary-nav__underline"></span></a>
+              <a class="primary-nav__link primary-nav__link--active" href="#">Store locator<span class="primary-nav__underline"></span></a>
             </li>
           </ul>
         </nav>
@@ -71,29 +67,33 @@
           </div>
           <div class="site-header__order-table">
             <div class="">
-                Your Order  
-
+                <div class="site-header__order-table__title">
+                    Your Order
+                </div>  
                 <div class="site-header__order-list">
-                    <div class="site-header__order-list--empty">is empty</div>
+                    <!-- <div class="site-header__order-list--empty">is empty</div> -->
+                    <div class="site-header__order-list__item">
+                      <div class="site-header__order-list__item-name">
+                        coca  cola 
+                      </div>
+                      <div class="site-header__order-list__item-decorator">
+                        <div></div>
+                      </div>
+                      <div class="site-header__order-list__item-price">
+                       <sup> &dollar;</sup> 2.49 <sup> <sub>x 2</sub></sup>
+                      </div>
+                    </div>
+                    <!-- <div class="site-header__order-list__total">
+                      Total: <sup>&dollar;</sup>2.49
+                    </div> -->
+
+                    <div class="site-header__order-list__bnt-checkout">
+                        <button class="btn">submit order</button>
+                    </div>
                 </div>
             </div>
 
-            <div class="site-header__order-table__decoration">
-                <div class="site-header__order__circle"></div>
 
-                <div class="site-header__order-list__button">
-
-                  <img src="assets/images/icons/sliced-pizza.svg" alt="spikes">
-
-                </div>
-                <!-- <div><i class="fas fa-stroopwafel"></i></div> -->
-                <!-- <div class="site-header__order-table__arrow">
-                    <div><div class="icon__arrow icon__arrow--down"></div></div>
-                    <div><div class="icon__arrow icon__arrow--down"></div></div>
-                    <div><div class="icon__arrow icon__arrow--down"></div></div>
-                  </div> -->
-
-            </div>
           </div>
           <button class="site-header__order btn btn__order btn--rounded">
               <img class="btn__order--icon" src="assets/images/icons/motoroler.svg" alt="motoroler"></img>
@@ -103,7 +103,18 @@
               </div>
           </button>
       </div>
+
     </div>
+
+    </div>
+    <div class="site-header__order-table__decoration site-header__menu-icon">
+        <div class=" site-header__order__circle"></div>
+
+        <div class="site-header__order-list__button">
+
+          <img src="assets/images/icons/sliced-pizza.svg" alt="spikes">
+
+        </div>
     </div>
   </header>
   <section class="large-hero">

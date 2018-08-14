@@ -4025,15 +4025,6 @@ readers do not read off random characters that represent icons */
   position: static;
   width: auto; }
 
-.template {
-  width: 1920px; }
-  .template img {
-    width: 1920px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: .3; }
-
 body {
   color: #333;
   background-color: #fff;
@@ -4056,6 +4047,19 @@ hr {
   margin: auto;
   color: #fff;
   opacity: .4; }
+
+.template {
+  display: none; }
+  @media (min-width: 1024px) {
+    .template {
+      display: block;
+      width: 1920px; }
+      .template img {
+        width: 1920px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: .3; } }
 
 .large-hero {
   position: relative;
@@ -4534,13 +4538,19 @@ Instead edit gulp/templates/sprite */
       vertical-align: middle; }
 
 .site-header {
-  display: inline-block;
-  width: 100%;
+  display: block;
   padding: 15px 0 10px;
-  background-color: #c00a27;
-  text-align: center; }
+  text-align: center;
+  z-index: 100;
+  overflow-y: auto;
+  position: fixed;
+  width: 100%;
+  max-height: 100%;
+  padding-top: 0; }
   @media (min-width: 768px) {
     .site-header {
+      background-color: #c00a27;
+      position: initial;
       text-align: left;
       padding-top: 5px;
       padding-bottom: 10px; } }
@@ -4550,9 +4560,25 @@ Instead edit gulp/templates/sprite */
       padding-top: 34px;
       padding-bottom: 34px;
       background-color: #c00a27; } }
+  .site-header > .wrapper {
+    background-color: #c00a27;
+    transition: background-color .7s; }
+  .site-header--is-expanded > .wrapper {
+    background-color: #a50821;
+    transition: background-color .7s; }
+    @media (min-width: 768px) {
+      .site-header--is-expanded > .wrapper {
+        background-color: #c00a27; } }
+  .site-header--is-expanded .site-header__order-table__decoration {
+    background-color: #a50821;
+    transition: background-color .7s; }
+  .site-header--is-expanded .site-header__order__circle {
+    background-color: #a50821;
+    transition: background-color .7s; }
   .site-header__logo {
     width: 203px;
-    margin: auto; }
+    margin: auto;
+    padding-top: 15px; }
     @media (min-width: 768px) {
       .site-header__logo {
         float: left;
@@ -4562,45 +4588,9 @@ Instead edit gulp/templates/sprite */
     @media (min-width: 768px) {
       .site-header__menu {
         display: block !important; } }
-  .site-header__menu-icon {
-    width: 20px;
-    height: 19px;
-    position: absolute;
-    z-index: 10;
-    top: 15px;
-    right: 15px; }
-    .site-header__menu-icon::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 20px;
-      height: 3px;
-      background-color: #FFF;
-      transform-origin: 0 0;
-      transition: transform .3s ease-out; }
-    .site-header__menu-icon__middle {
-      position: absolute;
-      top: 8px;
-      left: 0;
-      width: 20px;
-      height: 3px;
-      background-color: #FFF;
-      transition: all .3s ease-out;
-      transform-origin: 0 50%; }
-    .site-header__menu-icon::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 20px;
-      height: 3px;
-      background-color: #FFF;
-      transform-origin: 0 100%;
-      transition: transform .3s ease-out; }
-    @media (min-width: 768px) {
-      .site-header__menu-icon {
-        display: none; } }
+  @media (min-width: 768px) {
+    .site-header__menu-icon {
+      display: none; } }
   .site-header__menu-icon--close-x::before {
     transform: rotate(45deg) scaleX(1.25); }
   .site-header__menu-icon--close-x .site-header__menu-icon__middle {
@@ -4622,17 +4612,16 @@ Instead edit gulp/templates/sprite */
         width: auto;
         float: right; } }
   .site-header__contacts {
-    font-family: 'Open Sans';
-    vertical-align: middle;
-    display: inline-block;
     text-align: center;
-    margin-top: 2px;
-    margin-bottom: 10px;
     font-weight: 600;
     letter-spacing: -.7px;
-    font-size: .875rem; }
+    font-size: .875rem;
+    margin: 10px auto 15px; }
     @media (min-width: 768px) {
       .site-header__contacts {
+        margin-top: 2px;
+        display: inline-block;
+        vertical-align: middle;
         text-align: right;
         margin-bottom: 0px;
         float: left; } }
@@ -4643,44 +4632,103 @@ Instead edit gulp/templates/sprite */
       .site-header__contacts {
         margin-right: 21px; } }
     .site-header__contacts__title {
+      font-family: "Open Sans", sans-serif;
       margin-right: -6px;
       display: inline;
-      color: #ffae00; }
+      color: #ffae00;
+      font-size: 1rem; }
+      @media (min-width: 768px) {
+        .site-header__contacts__title {
+          font-size: .875rem; } }
   .site-header__contact-number {
     margin-top: 1px;
     padding-right: 5px;
-    font-weight: 700;
+    font-weight: 200;
     color: #fff;
-    letter-spacing: .1px;
-    font-size: 1rem; }
+    font-size: 1.4rem;
+    letter-spacing: .05rem; }
     @media (min-width: 768px) {
       .site-header__contact-number {
+        letter-spacing: .1px;
+        font-weight: 700;
         padding-right: 10px;
         font-size: 1.72rem; } }
-  .site-header__order-list__button {
-    margin-bottom: -22px;
-    position: relative; }
-    .site-header__order-list__button img {
-      height: 38px; }
-  .site-header__order-list--empty {
-    font-weight: 200;
-    text-transform: capitalize;
-    color: rgba(255, 255, 255, 0.5);
-    padding: 15px 0; }
+  .site-header__order-list {
+    max-width: 350px;
+    margin: 15px auto 20px; }
+    .site-header__order-list__button {
+      margin-bottom: -22px;
+      position: relative; }
+      .site-header__order-list__button img {
+        height: 38px; }
+    .site-header__order-list__item {
+      font-family: "Yanone Kaffeesatz", sans-serif;
+      display: table;
+      font-weight: 300; }
+    .site-header__order-list__item-decorator {
+      display: table-cell;
+      width: 100%; }
+      .site-header__order-list__item-decorator > div {
+        border-bottom: dotted 1px #fff;
+        width: 100%;
+        height: 10px; }
+    .site-header__order-list__item-name {
+      font-family: "Yanone Kaffeesatz", sans-serif;
+      font-size: 1.3rem;
+      letter-spacing: .1rem;
+      font-weight: 200;
+      margin-right: 5px;
+      white-space: nowrap;
+      display: table-cell;
+      text-transform: capitalize;
+      display: inline-block; }
+    .site-header__order-list__item-price {
+      font-size: 1.1rem;
+      margin-left: 5px;
+      white-space: nowrap;
+      display: table-cell;
+      float: right; }
+    .site-header__order-list__total {
+      font-family: "Yanone Kaffeesatz", sans-serif;
+      font-weight: 200;
+      margin-top: 10px;
+      float: right;
+      border-bottom: solid 1px #fff;
+      font-size: 1.5rem; }
+    .site-header__order-list__bnt-checkout {
+      width: 100%;
+      display: inline-block;
+      margin-top: 20px; }
+      .site-header__order-list__bnt-checkout .btn {
+        letter-spacing: .2rem;
+        border: solid 1px #fff;
+        background-color: transparent;
+        text-transform: uppercase;
+        padding: 10px 10%;
+        font-weight: 200; }
+    .site-header__order-list--empty {
+      font-weight: 200;
+      text-transform: capitalize;
+      color: rgba(255, 255, 255, 0.5);
+      padding: 15px 0; }
   .site-header__order-table {
     color: #fff; }
+    .site-header__order-table__title {
+      max-width: 350px;
+      text-transform: uppercase;
+      font-family: "Open Sans", sans-serif;
+      font-weight: 200;
+      font-size: 1.3rem;
+      word-spacing: .3rem;
+      border-bottom: solid 1px #fff;
+      padding-bottom: 10px;
+      margin: 20px auto 0px; }
     .site-header__order-table__decoration {
+      background-color: #c00a27;
       margin-bottom: 22px;
       border-bottom: solid 1px rgba(255, 255, 255, 0.8);
       text-align: center;
       position: relative; }
-    .site-header__order-table__arrow {
-      left: -3px;
-      top: -15px;
-      position: relative;
-      margin-bottom: -5px; }
-      .site-header__order-table__arrow div {
-        margin-bottom: -13px; }
     @media (min-width: 768px) {
       .site-header__order-table {
         display: none; } }
@@ -4842,13 +4890,17 @@ Instead edit gulp/templates/sprite */
       .primary-nav li {
         margin: 0 0 0 43px; } }
   .primary-nav__underline {
-    top: 24px;
+    top: 20px;
     left: 50%;
     transform: translateX(-50%);
     right: 0px;
     position: absolute;
-    width: 42px;
+    width: 60%;
     height: 2px; }
+    @media (min-width: 768px) {
+      .primary-nav__underline {
+        top: 24px;
+        width: 45%; } }
     .primary-nav__link--active > .primary-nav__underline {
       background-color: #ffae00; }
   .primary-nav__link {

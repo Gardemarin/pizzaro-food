@@ -1,11 +1,12 @@
 @import '../../../node_modules/normalize-scss/sass/normalize/import-now';
 @import '../../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome';
 
-@import 'base/template';
 // @import 'base/debug';
 @import 'base/variables';
 @import 'base/mixins';
 @import 'base/global';
+@import 'base/template';
+
 
 @import 'modules/large-hero';
 @import 'modules/btn';

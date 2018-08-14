@@ -70,13 +70,17 @@
   }
 
   &__underline {
-    top: 24px;
+    top: 20px;
     left: 50%;
     transform: translateX(-50%);
     right: 0px;
     position: absolute;
-    width: 42px;
+    width: 60%;
     height: 2px;
+    @include at-medium {
+      top: 24px;
+      width: 45%;
+    }
 
     .primary-nav__link--active > & {
       background-color: $main-orange;
