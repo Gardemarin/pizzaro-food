@@ -1,12 +1,13 @@
 
 .site-header {
+  transition: all .7s;
 
-
-  display: block;
+  // box-shadow: 0px 4px 16px #8400155c;
+  // background-color: $main-red;
+  // display: none;
   padding: 15px 0 10px;
-  // background-color: green;
   text-align: center;
-  z-index: 100;
+  z-index: 10;
 
   overflow-y: auto;
   position: fixed;
@@ -15,8 +16,9 @@
 
   padding-top: 0;
 
-  
   @include at-medium {
+    transition: all 0;
+    display: block;
     background-color: $main-red;
     position: initial;
     text-align: left;
@@ -36,24 +38,50 @@
     transition: background-color .7s;
   }
 
+
   &--is-expanded {
     & > .wrapper {
-      background-color: rgb(165, 8, 33);
-      transition: background-color .7s;
+      // background-color: rgb(165, 8, 33);
+      // transition: background-color .7s;
       
       @include at-medium {
         background-color: $main-red;
       }
     }
 
-    .site-header__order-table__decoration {
-      background-color: rgb(165, 8, 33);
-      transition: background-color .7s;
+    .site-header__order-list__button {
+      opacity: 0;
+      transition: opacity .7s;
+      @include at-medium {
+        opacity: 0;
+        transition: 0;
+      }
     }
 
     .site-header__order__circle {
-      background-color: rgb(165, 8, 33);
-      transition: background-color .7s;
+      opacity: 0;
+      transition: opacity .7s;
+      @include at-medium {
+        opacity: 0;
+        transition: 0;
+      }
+    }
+
+    &.site-header {
+      transform:  translateY(-40%);
+      @include at-medium {
+        transform:  translateY(0%);
+        transition: 0s;
+      }
+    }
+
+    .site-header__logo {
+      opacity: 0;
+      transition: opacity .7s;
+      @include at-medium {
+        opacity: 1;
+        transition: 0s;
+      }
     }
   }
 
@@ -62,6 +90,8 @@
     width: 203px;
     margin: auto;
     padding-top: 15px;
+    transition: opacity .7s;
+
     @include at-medium {
       float: left;
       padding-top: 12px;
@@ -77,6 +107,53 @@
   }
 
   &__menu-icon {
+    width: 20px;
+    height: 19px;
+    position: fixed;
+    z-index: 1000;
+    top: 10px;
+    right: 10px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 3px;
+      background-color: grey;
+      transform-origin: 0 0;
+      transition: all .3s ease-out;
+     
+      @include at-small {
+        background-color: $color-white;
+      }
+    }
+
+    &__middle {
+      position: absolute;
+      top: 8px;
+      left: 0;
+      width: 20px;
+      height: 3px;
+      background-color: $color-white;
+      transition: all .3s ease-out;
+      transform-origin: 0 50%;
+     
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 20px;
+      height: 3px;
+      background-color: $color-white;
+      transform-origin: 0 100%;
+      transition: all .3s ease-out;
+     
+    }
 
     @include at-medium {
       display: none;
@@ -177,7 +254,10 @@
     &__button {
       margin-bottom: -22px;
       position: relative;
-
+      transition: opacity .7s;
+      @include at-medium {
+        transition: all 0;
+      }
       img {
         height: 38px;
       }
@@ -273,6 +353,10 @@
       border-bottom: solid 1px rgba(255, 255, 255, 0.8);
       text-align:  center;
       position: relative;
+      @include at-medium {
+        display: none;
+      }
+      
     }
 
     @include at-medium {
@@ -295,6 +379,7 @@
     }
 
     &__circle {
+      transition: opacity .7s;
       width: 46px;
       height: 23px;
       background-color: #c10a28;
@@ -307,6 +392,9 @@
       position:  absolute;
       transform: translateX(-50%);
 
+      @include at-medium {
+        transition: all 0;
+      }
 
     }
     

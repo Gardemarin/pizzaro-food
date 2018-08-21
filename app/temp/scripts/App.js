@@ -50,25 +50,32 @@
 
 	var _MobileMenu2 = _interopRequireDefault(_MobileMenu);
 
+	var _jquery = __webpack_require__(2);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	// import RevealOnScroll from './modules/RevealOnScroll';
-	// import $ from 'jquery';
 	// import StickyHeader from './modules/StickyHeader';
 	// import Modal from './modules/Modal';
+
 
 	var mobileMenu = new _MobileMenu2.default();
 	// new RevealOnScroll($(".feature-item"), "85%");
 	// new RevealOnScroll($(".testimonial"), "60%");
 	// var stickyHeader = new StickyHeader();
 	// var modal = new Modal();
+
+	// 
+
+	// import RevealOnScroll from './modules/RevealOnScroll';
 	console.log('veolia');
 
 /***/ }),
 /* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -80,6 +87,8 @@
 
 	var _jquery2 = _interopRequireDefault(_jquery);
 
+	__webpack_require__(3);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -89,26 +98,67 @@
 	    _classCallCheck(this, MobileMenu);
 
 	    this.siteHeader = (0, _jquery2.default)(".site-header");
+
 	    this.siteHeaderMenu = (0, _jquery2.default)(".site-header__menu");
-	    this.menuIcon = (0, _jquery2.default)(".site-header__menu-icon");
+	    this.fullList = (0, _jquery2.default)(".order__full");
+	    this.orderSummaryBtn = (0, _jquery2.default)(".order__summary");
+	    this.menuIcon = (0, _jquery2.default)(".side-menu__menu-icon");
+	    this.sideMenu = (0, _jquery2.default)(".side-menu");
+
 	    this.menuContent = (0, _jquery2.default)(".site-header__menu-content");
 	    this.primaryNav = (0, _jquery2.default)(".primary-nav");
 	    this.events();
+
+	    this.menu = (0, _jquery2.default)('.side-menu__nav');
+	    this.items = this.menu.find('.side-menu__nav__link');
+	    new SlidingMenu({
+	      'menu': this.menu,
+	      'items': this.items,
+	      'duration': 200,
+	      'slidingClass': 'type-color-purple',
+	      'direction': 'y'
+	    }, {
+	      'over': this.over,
+	      'leave': this.leave
+	    });
 	  }
 
 	  _createClass(MobileMenu, [{
-	    key: "events",
-	    value: function events() {
-	      this.menuIcon.click(this.toggleTheMenu.bind(this));
+	    key: 'over',
+	    value: function over(current, data) {
+	      (0, _jquery2.default)(data.options.items).removeClass('active');
+	      (0, _jquery2.default)(current).addClass('active');
 	    }
 	  }, {
-	    key: "toggleTheMenu",
+	    key: 'leave',
+	    value: function leave(current, data) {
+	      (0, _jquery2.default)(data.options.items).removeClass('active');
+	      (0, _jquery2.default)(data.itemActive).addClass('active');
+	    }
+	  }, {
+	    key: 'events',
+	    value: function events() {
+	      this.menuIcon.click(this.toggleTheMenu.bind(this));
+	      this.orderSummaryBtn.click(this.displayItems.bind(this));
+	    }
+	  }, {
+	    key: 'displayItems',
+	    value: function displayItems() {
+	      this.fullList.slideToggle();
+	      this.orderSummaryBtn.toggleClass("order--show");
+	    }
+	  }, {
+	    key: 'toggleTheMenu',
 	    value: function toggleTheMenu() {
-	      this.siteHeaderMenu.slideToggle("show");
+	      // this.sideMenu.slideToggle("show");
+
+	      // this.siteHeaderMenu.slideToggle("show");
+
 	      // this.menuContent.slideToggle("show"); //.toggleClass("site-header__menu-content--is-visible");
 	      // this.primaryNav.toggleClass("primary-nav--is-visible");
 	      this.siteHeader.toggleClass("site-header--is-expanded");
-	      this.menuIcon.toggleClass("site-header__menu-icon--close-x");
+	      this.sideMenu.toggleClass("side-menu--is-expanded");
+	      this.menuIcon.toggleClass("side-menu__menu-icon--close-x");
 	    }
 	  }]);
 
@@ -10486,6 +10536,215 @@
 	return jQuery;
 	} );
 
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _jquery = __webpack_require__(2);
+
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	(function () {
+	  var bind = function bind(fn, me) {
+	    return function () {
+	      return fn.apply(me, arguments);
+	    };
+	  };
+
+	  window.SlidingMenu = function () {
+	    var errorReport;
+
+	    SlidingMenu.itemActive;
+
+	    SlidingMenu.activeState;
+
+	    SlidingMenu.sliding;
+
+	    SlidingMenu.defaultData;
+
+	    SlidingMenu.options;
+
+	    SlidingMenu.callbacks;
+
+	    function SlidingMenu(options, callbacks) {
+	      this.setMouseOver = bind(this.setMouseOver, this);
+	      this.setSlidingData = bind(this.setSlidingData, this);
+	      this.setDefaultData = bind(this.setDefaultData, this);
+	      this.setActiveState = bind(this.setActiveState, this);
+	      this.createSliding = bind(this.createSliding, this);
+	      this.options = {
+	        'menu': options.menu,
+	        'items': options.items,
+	        'itemActiveClass': options.itemActiveClass != null ? options.itemActiveClass : options.itemActiveClass = 'active',
+	        'slidingClass': options.slidingClass != null ? options.slidingClass : options.slidingClass = '',
+	        'duration': options.duration != null ? options.duration : options.duration = 400,
+	        'direction': options.direction != null ? options.direction : options.direction = 'x'
+	      };
+	      this.callbacks = {
+	        'over': null,
+	        'leave': null
+	      };
+	      if (callbacks != null) {
+	        this.callbacks = callbacks;
+	      }
+	      this.createSliding();
+	      this.setActiveState();
+	      this.setDOMEvents();
+	    }
+
+	    SlidingMenu.prototype.createSliding = function () {
+	      this.sliding = (0, _jquery2.default)('<div class="menu-sliding ' + this.options.slidingClass + '"><span class="icon__arrow icon__arrow--right"></span><div class="triangle"><div class="triangle__body"></div></div></div>');
+	      return this.sliding.appendTo(this.options.menu);
+	    };
+
+	    SlidingMenu.prototype.setActiveState = function () {
+	      this.options.items.each(function (_this) {
+	        return function (index, value) {
+	          if ((0, _jquery2.default)(value).hasClass(_this.options.itemActiveClass)) {
+	            return _this.itemActive = (0, _jquery2.default)(value);
+	          }
+	        };
+	      }(this));
+	      if (this.itemActive != null) {
+	        this.activeState = true;
+	        return this.setDefaultData();
+	      } else {
+	        return this.activeState = false;
+	      }
+	    };
+
+	    SlidingMenu.prototype.setDefaultData = function () {
+	      this.defaultData = {
+	        'left': this.itemActive.offset().left - this.options.menu.offset().left,
+	        'top': this.itemActive.offset().top - this.options.menu.offset().top,
+	        // 'width': this.itemActive.outerWidth(),
+	        'height': this.itemActive.outerHeight()
+	      };
+	      return this.setSlidingData();
+	    };
+
+	    SlidingMenu.prototype.setSlidingData = function () {
+	      this.sliding.css({
+	        'width': this.defaultData.width
+	      });
+	      if (this.options.direction === 'x') {
+	        return this.sliding.css({
+	          'left': this.defaultData.left
+	        });
+	      } else if (this.options.direction === 'y') {
+	        return this.sliding.css({
+	          'height': this.defaultData.height,
+	          'top': this.defaultData.top
+	        });
+	      } else {
+	        return errorReport(this.options.direction + " not support! Used x or y!");
+	      }
+	    };
+
+	    SlidingMenu.prototype.setDOMEvents = function () {
+	      this.setMouseOver();
+	      return this.setMouseLeave();
+	    };
+
+	    SlidingMenu.prototype.setMouseOver = function () {
+	      return this.options.items.on('mouseover', function (_this) {
+	        return function (event) {
+	          var $self, animateOptions;
+	          if (event.currentTarget !== event.target) {
+	            return;
+	          }
+	          $self = (0, _jquery2.default)(event.target);
+	          if (!_this.itemActive) {
+	            _this.itemActive = $self;
+	            _this.setDefaultData();
+	          }
+	          if (_this.callbacks.over != null) {
+	            _this.callbacks.over($self, {
+	              itemActive: _this.itemActive,
+	              activeState: _this.activeState,
+	              sliding: _this.sliding,
+	              options: _this.options
+	            });
+	          }
+	          _this.sliding.css('opacity', 1);
+	          if (_this.options.direction === 'x') {
+	            animateOptions = {
+	              'left': $self.offset().left - _this.options.menu.offset().left,
+	              'width': $self.outerWidth()
+	            };
+	          } else if (_this.options.direction === 'y') {
+	            animateOptions = {
+	              'top': $self.offset().top - _this.options.menu.offset().top
+	            };
+	          } else {
+	            errorReport(_this.options.direction + " not support! Used x or y!");
+	          }
+	          return _this.sliding.stop().animate(animateOptions, {
+	            duration: _this.options.duration
+	          });
+	        };
+	      }(this));
+	    };
+
+	    SlidingMenu.prototype.setMouseLeave = function () {
+	      return this.options.menu.on('mouseleave', function (_this) {
+	        return function (event) {
+	          var $self, animateOptions;
+	          $self = (0, _jquery2.default)(event.target);
+	          if (!_this.activeState) {
+	            _this.itemActive = null;
+	            _this.sliding.css({
+	              'opacity': 0,
+	              'left': 0,
+	              'with': 0
+	            });
+	            return;
+	          }
+	          if (_this.callbacks.leave != null) {
+	            _this.callbacks.leave($self, {
+	              itemActive: _this.itemActive,
+	              activeState: _this.activeState,
+	              sliding: _this.sliding,
+	              options: _this.options
+	            });
+	          }
+	          if (_this.options.direction === 'x') {
+	            animateOptions = {
+	              'left': _this.defaultData.left,
+	              'width': _this.defaultData.width
+	            };
+	          } else if (_this.options.direction === 'y') {
+	            animateOptions = {
+	              'top': _this.defaultData.top
+	            };
+	          } else {
+	            errorReport(_this.options.direction + " not support! Used x or y!");
+	          }
+	          return _this.sliding.stop().animate(animateOptions, {
+	            duration: _this.options.duration
+	          });
+	        };
+	      }(this));
+	    };
+
+	    errorReport = function errorReport(message) {
+	      return console.error(message);
+	    };
+
+	    return SlidingMenu;
+	  }();
+	}).call(undefined); // Generated by CoffeeScript 1.10.0
+
+	/*
+	 SlidingMenu Constructor 1.0
+	 Author: M.Ulyanov
+	 Created: 05/12/2015
+	 */
 
 /***/ })
 /******/ ]);
