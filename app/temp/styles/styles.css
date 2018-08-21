@@ -5902,13 +5902,13 @@ Instead edit gulp/templates/sprite */
         background-color: #fff; } }
   .side-menu__base {
     background-color: white;
-    box-shadow: 4px 0px 20px 4px rgba(1, 1, 1, 0.2);
+    box-shadow: 4px 0px 20px 4px rgba(1, 1, 1, 0);
     height: 100vh;
     position: fixed;
     top: 0px;
     left: 0px;
     transform: translateX(-100%);
-    transition: transform .5s ease-out;
+    transition: all .5s ease-out;
     z-index: 11;
     width: 100%; }
     @media (min-width: 345px) {
@@ -5918,7 +5918,8 @@ Instead edit gulp/templates/sprite */
       .side-menu__base {
         display: none; } }
     .side-menu__base.side-menu--is-expanded {
-      transform: translateX(0%); }
+      transform: translateX(0%);
+      box-shadow: 4px 0px 20px 4px rgba(1, 1, 1, 0.2); }
   .side-menu__wrapper {
     height: 100%;
     width: 100%; }
