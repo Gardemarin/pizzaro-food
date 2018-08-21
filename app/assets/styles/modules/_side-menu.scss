@@ -154,10 +154,20 @@
     position: fixed;
     top: 0px;
     left: 0px;
-    z-index: -1;
+    transform: translateX(-100%);
+    transition: transform .5s ease-out;
+    z-index: 11;
     width: 100%;
     @include at-small {
       width: 300px;
+    }
+
+    @include at-medium {
+      display: none;
+    }
+
+    &.side-menu--is-expanded {
+      transform: translateX(0%);
     }
   }
 

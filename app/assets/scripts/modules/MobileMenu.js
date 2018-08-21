@@ -10,6 +10,7 @@ class MobileMenu {
     this.orderSummaryBtn = $(".order__summary");
     this.menuIcon = $(".side-menu__menu-icon");
     this.sideMenu = $(".side-menu");
+    this.sideMenuBase = $(".side-menu__base");
 
     this.menuContent = $(".site-header__menu-content");
     this.primaryNav = $(".primary-nav");
@@ -62,6 +63,7 @@ class MobileMenu {
     this.siteHeader.toggleClass("site-header--is-expanded");
     this.sideMenu.toggleClass("side-menu--is-expanded");
     this.menuIcon.toggleClass("side-menu__menu-icon--close-x");
+    this.sideMenuBase.toggleClass("side-menu--is-expanded");
   }
 }
 

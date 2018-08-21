@@ -104,6 +104,7 @@
 	    this.orderSummaryBtn = (0, _jquery2.default)(".order__summary");
 	    this.menuIcon = (0, _jquery2.default)(".side-menu__menu-icon");
 	    this.sideMenu = (0, _jquery2.default)(".side-menu");
+	    this.sideMenuBase = (0, _jquery2.default)(".side-menu__base");
 
 	    this.menuContent = (0, _jquery2.default)(".site-header__menu-content");
 	    this.primaryNav = (0, _jquery2.default)(".primary-nav");
@@ -159,6 +160,7 @@
 	      this.siteHeader.toggleClass("site-header--is-expanded");
 	      this.sideMenu.toggleClass("side-menu--is-expanded");
 	      this.menuIcon.toggleClass("side-menu__menu-icon--close-x");
+	      this.sideMenuBase.toggleClass("side-menu--is-expanded");
 	    }
 	  }]);
 
