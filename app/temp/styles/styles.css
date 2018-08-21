@@ -4822,7 +4822,8 @@ Instead edit gulp/templates/sprite */
     @media (min-width: 1024px) {
       .site-footer__contacts address {
         font-weight: 400;
-        font-size: .875rem; } }
+        font-size: .95rem;
+        letter-spacing: -.035rem; } }
   .site-footer__comma {
     display: block; }
     @media (min-width: 1024px) {
