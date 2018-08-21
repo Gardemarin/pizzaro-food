@@ -4796,13 +4796,10 @@ Instead edit gulp/templates/sprite */
   .site-footer__logo {
     padding: 20px 0; }
     .site-footer__logo .icon--logo {
-      background-size: 100%;
-      width: 150px;
-      height: 40.65px; }
+      transform: scale(0.7); }
       @media (min-width: 768px) {
         .site-footer__logo .icon--logo {
-          width: 203px;
-          height: 54.65px; } }
+          transform: scale(1); } }
     @media (min-width: 768px) {
       .site-footer__logo {
         padding: 50px 0px 53px; } }

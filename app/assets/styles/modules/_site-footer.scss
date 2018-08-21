@@ -37,12 +37,9 @@
   &__logo {
     padding: 20px 0;
     .icon--logo {
-      background-size: 100%;
-      width: 150px;
-      height: 40.65px;
+      transform: scale(.7);
       @include at-medium {
-        width: 203px;
-        height: 54.65px;
+        transform: scale(1);
       }
     }
     @include at-medium {
