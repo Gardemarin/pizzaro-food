@@ -1,5 +1,4 @@
 import $ from 'jquery';
-import './../modules/SlidingMenu';
 
 class MobileMenu {
   constructor() {
@@ -30,16 +29,6 @@ class MobileMenu {
     // });
 
 
-  }
-
-  over(current, data) {
-    $(data.options.items).removeClass('active');
-    $(current).addClass('active');
-  }
-
-  leave(current, data) {
-    $(data.options.items).removeClass('active');
-    $(data.itemActive).addClass('active');
   }
 
   events() {

@@ -2,7 +2,6 @@
 import $ from 'jquery';
 
 import MobileMenu from './modules/MobileMenu';
-// import SlidingUnderline from './modules/SlidingUnderline';
 
 import Slider from './modules/Slider';
 
