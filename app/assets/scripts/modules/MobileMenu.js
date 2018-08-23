@@ -18,18 +18,17 @@ class MobileMenu {
 
     this.menu = $('.side-menu__nav');
     this.items = this.menu.find('.side-menu__nav__link');
-    new SlidingMenu({
-      'menu': this.menu,
-      'items': this.items,
-      'duration': 200,
-      'slidingClass': 'type-color-purple',
-      'direction': 'y'
-    },
-    {
-      'over': this.over,
-      'leave': this.leave
-    });
-  
+    // new SlidingMenu({
+    //   'menu': this.menu,
+    //   'items': this.items,
+    //   'duration': 200,
+    //   'slidingClass': 'type-color-purple',
+    //   'direction': 'y'
+    // }, {
+    //   'over': this.over,
+    //   'leave': this.leave
+    // });
+
 
   }
 
@@ -57,7 +56,7 @@ class MobileMenu {
     // this.sideMenu.slideToggle("show");
 
     // this.siteHeaderMenu.slideToggle("show");
-    
+
     // this.menuContent.slideToggle("show"); //.toggleClass("site-header__menu-content--is-visible");
     // this.primaryNav.toggleClass("primary-nav--is-visible");
     this.siteHeader.toggleClass("site-header--is-expanded");

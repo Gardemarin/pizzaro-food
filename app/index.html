@@ -24,7 +24,7 @@
 <body>
   <div class="template">
     <!-- <img src="./assets/images/svgArtboard 1-100.jpg" alt="template with extra"> -->
-    <img src="./assets/images/01-HomePage no extra-01.png" alt="template with no extra">
+    <!-- <img src="./assets/images/01-HomePage no extra-01.png" alt="template with no extra"> -->
   </div>
   <div class="side-menu__base"></div>
 
@@ -61,16 +61,22 @@
 
       <div class="side-menu__nav">
 
-        <div class="side-menu__nav__item">
-          <a href="#" class="side-menu__nav__link  active">
+        <div class="side-menu__nav__item active">
+          <a href="#" class="side-menu__nav__link">
             <div class="side-menu__nav__item__overline"></div>
             <span class="side-menu__nav__item__icon">
-            <div class="icon icon--pizza-grey icon--grey"></div>
-            <div class="icon icon--pizza icon--white" ></div>
-          </span>
+              <div class="icon icon--pizza-grey icon--grey"></div>
+              <div class="icon icon--pizza icon--white" ></div>
+            </span>
             <span class="side-menu__nav__item__text">pizza</span>
             <div class="side-menu__nav__item__underline"></div>
           </a>
+          <div class="menu-sliding type-color-purple">
+            <span class="icon__arrow icon__arrow--right"></span>
+            <div class="triangle">
+              <div class="triangle__body"></div>
+            </div>
+          </div>
         </div>
         <div class="side-menu__nav__item ">
           <a href="#" class="side-menu__nav__link side-menu__nav__link--active">
@@ -127,6 +133,10 @@
             <div class="side-menu__nav__item__underline"></div>
           </a>
         </div>
+
+
+        <!-- let extra = this.options.slidingClass == 'sliding-underline' ? '<div class="sliding-underline__inner"></div>' : '<span class="icon__arrow icon__arrow--right"></span><div class="triangle"><div class="triangle__body"></div></div>'; -->
+        <!-- this.sliding = $('<div class="menu-sliding ' + this.options.slidingClass + '">' + extra + '</div>'); -->
       </div>
       <div class="side-menu__nav-small">
         <ul>
@@ -179,16 +189,20 @@
         <nav class="primary-nav primary-nav--is-visible">
           <ul>
             <li>
-              <a class="primary-nav__link primary-nav__link--active" href="#">Order Online<span class="primary-nav__underline"></span></a>
+              <a class="primary-nav__link active" href="#">Order Online
+                <div class="slidingas">
+                  <div class="slidingas__inner"></div>
+                  </div>
+              </a>
             </li>
             <li>
-              <a class="primary-nav__link" href="#">About<span class="primary-nav__underline"></span></a>
+              <a class="primary-nav__link" href="#">About</a>
             </li>
             <li>
-              <a class="primary-nav__link primary-nav__link--active" href="#">News<span class="primary-nav__underline"></span></a>
+              <a class="primary-nav__link " href="#">News</a>
             </li>
             <li>
-              <a class="primary-nav__link primary-nav__link--active" href="#">Store locator<span class="primary-nav__underline"></span></a>
+              <a class="primary-nav__link " href="#">Store locator</a>
             </li>
           </ul>
         </nav>

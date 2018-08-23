@@ -4064,7 +4064,7 @@ hr {
 
 .large-hero {
   position: relative;
-  background-color: rgba(192, 10, 39, 0.5); }
+  background-color: #c00a27; }
 
 .btn {
   background-color: #f0002f;
@@ -5027,6 +5027,18 @@ Instead edit gulp/templates/sprite */
     font-size: .9rem;
     position: relative; }
 
+.slidingas {
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  bottom: -40%; }
+  .slidingas__inner {
+    width: 45%;
+    min-width: 30px;
+    height: 2px;
+    background-color: #ffae00;
+    margin: auto; }
+
 .dropbtn {
   color: white;
   font-size: .875rem;
@@ -5933,7 +5945,8 @@ Instead edit gulp/templates/sprite */
     padding: 40px 0; }
     .side-menu__nav__item {
       display: block;
-      margin: auto; }
+      margin: auto;
+      position: relative; }
       .side-menu__nav__item:last-child .side-menu__nav__item__underline {
         display: none; }
       .side-menu__nav__item .side-menu__nav__item__underline {
@@ -5945,19 +5958,17 @@ Instead edit gulp/templates/sprite */
         margin-top: -1px; }
       .side-menu__nav__item__underline {
         opacity: 1;
-        animation-name: show;
-        animation-duration: .5s; }
-        .active .side-menu__nav__item__underline {
+        transition: all .1s; }
+        .light .side-menu__nav__item__underline {
           opacity: 0;
-          animation-name: hide;
-          animation-duration: s; }
+          transition: all .1s; }
       .side-menu__nav__item__text {
         color: #333e48;
         display: inline-block;
         text-transform: capitalize; }
-        .active .side-menu__nav__item__text {
+        .light .side-menu__nav__item__text {
           color: #fff;
-          transition: all .3s; }
+          transition: all .1s; }
       .side-menu__nav__item__icon {
         display: inline-block;
         vertical-align: middle;
@@ -5969,16 +5980,16 @@ Instead edit gulp/templates/sprite */
           margin-right: 3px; }
         .side-menu__nav__item__icon .icon--grey {
           opacity: 1; }
-          .side-menu__nav__item__icon .icon--grey .active {
+          .side-menu__nav__item__icon .icon--grey .light {
             opacity: 0;
-            transition: all .3s; }
+            transition: all .1s; }
         .side-menu__nav__item__icon .icon--white {
           position: absolute;
           right: 0px;
           opacity: 0; }
-          .active .side-menu__nav__item__icon .icon--white {
+          .light .side-menu__nav__item__icon .icon--white {
             opacity: 1;
-            transition: all .3s; }
+            transition: all .1s; }
     .side-menu__nav__link {
       padding: 4px 0 7px;
       display: block;
@@ -5987,10 +5998,10 @@ Instead edit gulp/templates/sprite */
       text-decoration: none;
       position: relative;
       color: #333e48; }
-      .side-menu__nav__link.active {
+      .side-menu__nav__link.light {
         font-size: .9375rem;
         font-weight: 600; }
-      .side-menu__nav__link.active .side-menu__nav__link__arrow {
+      .side-menu__nav__link.light .side-menu__nav__link__arrow {
         display: inline-block; }
       .side-menu__nav__link__arrow {
         vertical-align: middle;
@@ -6115,13 +6126,10 @@ Instead edit gulp/templates/sprite */
     text-align: right; }
 
 .menu-sliding {
-  height: 100%;
   position: absolute;
   left: 0;
-  top: 0;
   z-index: 2;
-  color: #FFF;
-  background: #4BADD9; }
+  color: #FFF; }
   .menu-sliding .icon__arrow {
     position: absolute;
     top: 40%;
@@ -6140,35 +6148,37 @@ Instead edit gulp/templates/sprite */
 
 .menu-sliding.type-color-purple {
   background: #c00a27;
-  max-height: 53px;
   margin-top: -8px;
-  width: 102%; }
+  height: 58px;
+  width: 102%;
+  top: 0;
+  z-index: -1; }
   @media (min-width: 345px) {
     .menu-sliding.type-color-purple {
       width: 300px; } }
   .menu-sliding.type-color-purple .triangle {
     display: none;
     width: 40px;
-    height: 53px;
+    height: 58px;
     float: right; }
     .menu-sliding.type-color-purple .triangle .triangle__body {
-      width: 53px;
-      height: 53px;
+      width: 58px;
+      height: 58px;
       background: #c00a27; }
     @media (min-width: 345px) {
       .menu-sliding.type-color-purple .triangle {
         display: block;
         position: absolute;
         right: -40px;
-        height: 53px;
+        height: 58px;
         width: 40px;
         overflow: hidden;
         float: left; }
         .menu-sliding.type-color-purple .triangle .triangle__body {
           box-shadow: 2px -1px 10px 1px rgba(1, 1, 1, 0.17);
           position: absolute;
-          width: 53px;
-          height: 53px;
+          width: 58px;
+          height: 58px;
           right: 20px;
           background: #c00a27;
           -webkit-transform: rotate(45deg);

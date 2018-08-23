@@ -8,7 +8,7 @@
 import $ from 'jquery';
 
 (function() {
-  var bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
+  var bind = function(fn, me) { return function() { return fn.apply(me, arguments); }; };
 
   window.SlidingMenu = (function() {
     var errorReport;
@@ -52,7 +52,9 @@ import $ from 'jquery';
     }
 
     SlidingMenu.prototype.createSliding = function() {
-      this.sliding = $('<div class="menu-sliding ' + this.options.slidingClass + '"><span class="icon__arrow icon__arrow--right"></span><div class="triangle"><div class="triangle__body"></div></div></div>');
+
+      let extra = this.options.slidingClass == 'sliding-underline' ? '<div class="sliding-underline__inner"></div>' : '<span class="icon__arrow icon__arrow--right"></span><div class="triangle"><div class="triangle__body"></div></div>';
+      this.sliding = $('<div class="menu-sliding ' + this.options.slidingClass + '">' + extra + '</div>');
       return this.sliding.appendTo(this.options.menu);
     };
 
@@ -195,4 +197,3 @@ import $ from 'jquery';
   })();
 
 }).call(this);
-

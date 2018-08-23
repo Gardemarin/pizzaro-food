@@ -1,18 +1,22 @@
 @keyframes hide {
-  0%   {
+  0% {
     opacity: 1;
   }
-  10%  { opacity: 0; }
+  10% {
+    opacity: 0;
+  }
   100% {
     opacity: 0;
   }
 }
 
 @keyframes show {
-  0%   {
+  0% {
     opacity: 0;
   }
-  90%  { opacity: 1; }
+  90% {
+    opacity: 1;
+  }
   100% {
     opacity: 1;
   }
@@ -20,48 +24,39 @@
 
 .side-menu {
   &::-webkit-scrollbar {
-    width: 0 !important 
-  };
-
+    width: 0 !important
+  }
+  ;
   &::-webkit-scrollbar {
     width: 12px;
   }
-
   &::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 6px rgba(0,0,0,0); 
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0); 
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
     border-radius: 10px;
   }
-
   &::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    box-shadow: inset 0 0 6px rgba(0,0,0,0); 
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0); 
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
   }
-
   width: 100%;
   padding-right: 5px;
-  height: 100vh;   
+  height: 100vh;
   position: fixed;
   overflow: auto;
   z-index: 100;
-
   transform: translateX(-100%);
   transition: transform .5s ease-out;
   &--is-expanded {
     transform: translateX(0%);
   }
-
   @include at-small {
     width: 340px;
   }
-
   @include at-medium {
     display: none;
   }
-
-
-
   &__menu-icon {
     width: 20px;
     height: 19px;
@@ -69,7 +64,6 @@
     z-index: 1000;
     top: 10px;
     right: 10px;
-
     &::before {
       content: "";
       position: absolute;
@@ -80,12 +74,10 @@
       background-color: $color-white;
       transform-origin: 0 0;
       transition: all .3s ease-out;
-     
       @include at-small {
         background-color: $color-white;
       }
     }
-
     &__middle {
       position: absolute;
       top: 8px;
@@ -99,7 +91,6 @@
         background-color: $color-white;
       }
     }
-
     &::after {
       content: "";
       position: absolute;
@@ -114,12 +105,10 @@
         background-color: $color-white;
       }
     }
-
     @include at-medium {
       display: none;
     }
   }
-
   &__menu-icon--close-x {
     &::before {
       transform: rotate(45deg) scaleX(1.25);
@@ -128,7 +117,6 @@
         background-color: $color-white;
       }
     }
-
     .side-menu__menu-icon__middle {
       opacity: 0;
       transform: scaleX(0);
@@ -137,7 +125,6 @@
         background-color: $color-white;
       }
     }
-
     &::after {
       transform: rotate(-45deg) scaleX(1.25) translateY(1px);
       background-color: #333e48;
@@ -146,7 +133,6 @@
       }
     }
   }
-
   &__base {
     background-color: rgba($color: #fff, $alpha: 1);
     box-shadow: 4px 0px 20px 4px rgba(1, 1, 1, 0);
@@ -161,126 +147,90 @@
     @include at-small {
       width: 300px;
     }
-
     @include at-medium {
       display: none;
     }
-
     &.side-menu--is-expanded {
       transform: translateX(0%);
       box-shadow: 4px 0px 20px 4px rgba(1, 1, 1, .2);
     }
   }
-
   &__wrapper {
     height: 100%;
     width: 100%;
-
     @include at-small {
       width: 300px;
     }
   }
-
   &__logo {
     display: block;
     padding: 43px 0 50px;
-
     .icon {
       margin: auto;
     }
   }
   &__nav {
     padding: 40px 0;
-
     &__item {
       display: block;
       margin: auto;
-      // cursor: pointer;
-
-     &:last-child &__underline {
+      position: relative;
+      &:last-child &__underline {
         display: none;
       }
-
       & &__underline {
-        background: rgba(#4a4a4a, .3);//#9c9c9c;
+        background: rgba(#4a4a4a, .3); //#9c9c9c;
         width: 75%;
         margin: auto;
         height: 1px;
         bottom: 0px;
         margin-top: -1px;
       }
-
-
-
-    
-    // div {
-    //     width: 100px;
-    //     height: 100px;
-    //     background-color: red;
-    //     animation-name: example;
-    //     animation-duration: 4s;
-    // }
-
-
       &__underline {
         opacity: 1;
-        animation-name: show;
-        animation-duration: .5s;
-        .active & {
-
+        transition: all .1s;
+        .light & {
           opacity: 0;
-          animation-name: hide;
-          animation-duration: s;
+          transition: all .1s;
         }
       }
-
       &__text {
         color: #333e48;
         display: inline-block;
         text-transform: capitalize;
-        
-        .active & {
+        .light & {
           color: $color-white;
-          transition: all .3s;
+          transition: all .1s;
         }
-
       }
-
-
       &__icon {
         display: inline-block;
         vertical-align: middle;
         transform: scale(.6);
-        // max-height: 44px;
-        // height: 44px;
         width: 29.5%;
         position: relative;
         .icon {
           float: right;
           margin-right: 3px;
         }
-
         .icon--grey {
           opacity: 1;
-          .active {
+          .light {
             opacity: 0;
-            transition: all .3s;
+            transition: all .1s;
           }
         }
-
         .icon--white {
           position: absolute;
           right: 0px;
           opacity: 0;
-
-          .active & {
+          .light & {
             opacity: 1;
-            transition: all .3s;
+            transition: all .1s;
           }
         }
       }
     }
-
     &__link {
       // background-color:orange;
       padding: 4px 0 7px;
@@ -290,15 +240,13 @@
       text-decoration: none;
       position: relative;
       color: #333e48;
-      &.active {
+      &.light {
         font-size: .9375rem;
         font-weight: 600;
       }
-
-      &.active &__arrow {
+      &.light &__arrow {
         display: inline-block;
       }
-
       &__arrow {
         vertical-align: middle;
         height: 100%;
@@ -311,17 +259,14 @@
       }
     }
   }
-
   &__nav-small {
     ul {
       margin: 0;
       padding: 0;
-
       li {
         list-style: none;
-
         a {
-          font-family:$font-fourth;
+          font-family: $font-fourth;
           font-size: .675;
           font-weight: 600;
           padding: 9px 42px 9px;
@@ -334,7 +279,6 @@
       }
     }
   }
-
   &__socials {
     display: block;
     text-align: center;
@@ -350,9 +294,7 @@
       font-size: 1rem;
       padding-top: 9px;
       margin: 0 10px;
-
       border: solid 1px #555555;
-  
       // @include at-medium {
       //   border-width: 2px;
       //   margin: 0 12px;
@@ -379,35 +321,26 @@
   width: 80%;
   margin: auto;
   padding: 15px 17px 10px 23px;
-
   display: table;
   text-align: left;
-
-  &--show {
-
-  }
-
+  &--show {}
   &__full {
     display: none;
   }
-
   &__row {
     display: table-row;
-    & > * {
+    &>* {
       display: table-cell;
     }
   }
-
   &__summary {
     display: table;
     cursor: pointer;
-    & > * {
+    &>* {
       display: table-cell;
       pointer-events: none;
     }
   }
-
-
   &__icon {
     vertical-align: middle;
     width: 21%;
@@ -415,7 +348,6 @@
       height: 17px;
     }
   }
-
   &__text {
     color: #747474;
     width: 46%;
@@ -423,21 +355,18 @@
     text-transform: capitalize;
     font-size: .8125rem;
   }
-
   &__total {
     width: 20%;
     font-family: $font-fourth;
     text-transform: capitalize;
     font-size: .875rem;
     font-weight: 700;
-    
     border-top: 1px solid rgba($color: #333e48, $alpha: 0);
     transition: all .3s;
     .order--show & {
       border-top: 1px solid rgba($color: #333e48, $alpha: 1.0);
     }
   }
-
   &__btn {
     &__show-order {
       border: none;
@@ -446,10 +375,9 @@
       background: none;
       outline: none;
       transition: all .3s;
-        .order--show  & {
-          transform: rotate(180deg); 
-          
-        }
+      .order--show & {
+        transform: rotate(180deg);
+      }
       .icon__arrow {
         border-color: #333e48;
       }
@@ -458,13 +386,11 @@
 }
 
 .order__item {
-
   display: table;
   width: 100%;
-  & > * {
+  &>* {
     display: table-cell;
   }
-
   &__name {
     color: #747474;
     width: 35%;
@@ -473,7 +399,6 @@
     font-size: .8125rem;
     text-align: right;
   }
-
   &__price {
     color: #333;
     width: 33%;
@@ -483,18 +408,15 @@
     font-size: .875rem;
     text-align: right;
   }
-
 }
 
 .menu-sliding {
-  height: 100%;
+  // height: 100%;
   position: absolute;
   left: 0;
-  top: 0;
+  // top: 0;
   z-index: 2;
   color: #FFF;
-  background: #4BADD9;
-
   .icon__arrow {
     position: absolute;
     top: 40%;
@@ -504,7 +426,9 @@
   }
 }
 
-.side-menu__nav { position: relative; }
+.side-menu__nav {
+  position: relative;
+}
 
 .side-menu__nav__link {
   position: relative;
@@ -514,46 +438,45 @@
   }
 }
 
-.menu-sliding.type-color-purple { 
-  background: $main-red; 
-  max-height: 53px; 
-  margin-top: -8px; 
+.menu-sliding.type-color-purple {
+  background: $main-red;
+  margin-top: -8px;
+  height: 58px;
   width: 102%;
-
+  top: 0;
+  z-index: -1;
   @include at-small {
     width: 300px;
   }
-
   .triangle {
     display: none;
     width: 40px;
-    height: 53px;
+    height: 58px;
     float: right;
     .triangle__body {
-      width: 53px;
-      height: 53px;
+      width: 58px;
+      height: 58px;
       background: $main-red;
     }
-
     @include at-small {
       display: block;
-      position:absolute;
+      position: absolute;
       right: -40px;
-      height:53px;
-      width:40px;
-      overflow:hidden;
+      height: 58px;
+      width: 40px;
+      overflow: hidden;
       float: left;
       .triangle__body {
         box-shadow: 2px -1px 10px 1px rgba(1, 1, 1, 0.17);
-        position:absolute;
-        width:53px;
-        height:53px;
-        right:20px;
+        position: absolute;
+        width: 58px;
+        height: 58px;
+        right: 20px;
         background: $main-red;
-        -webkit-transform:rotate(45deg);
-        transform:rotate(45deg);
-        border-radius:10px;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        border-radius: 10px;
       }
     }
-  } 
+  }
 }

@@ -8,15 +8,13 @@ module.exports = {
     filename: "[name].js"
   },
   module: {
-    loaders: [
-      {
-        loader: 'babel',
-        query: {
-          presets: ['latest']
-        },
-        test: /\.js$/,
-        exclude: /node_modules/
-      }
-    ]
+    loaders: [{
+      loader: 'babel',
+      query: {
+        presets: ['latest']
+      },
+      test: /\.js$/,
+      exclude: /node_modules/
+    }]
   }
 }

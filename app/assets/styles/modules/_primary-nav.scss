@@ -1,18 +1,14 @@
 .primary-nav {
-  
   padding-top: 27px;
   text-align: center;
-
-  
-    // display: inline-block;
-    // display: none;
+  // display: inline-block;
+  // display: none;
   opacity: 0;
   transform: scale(1.2);
   transition: all .3s ease-out;
   position: relative;
   z-index: -10;
   max-height: 0px;
-
   @mixin atMedium {
     display: inline-block;
     opacity: 1;
@@ -20,55 +16,42 @@
     padding-top: 0;
     transform: scale(1);
   }
-
   &--is-visible {
     max-height: 1000px;
     opacity: 1;
     z-index: 1;
     transform: scale(1);
   }
-  
   @include at-medium {
     padding-left: 7px;
     float: right;
   }
-
   @include at-large {
     float: left;
   }
-
-
-
   ul {
     margin: 0;
     padding: 0;
     @include clearfix;
   }
-
   li {
     list-style: none;
     display: inline-block;
     padding: 8px 13px;
     border: solid 1px rgba(253, 129, 129, .9);
     margin: 5px 5px 10px 5px;
-
-
-
     @include at-medium {
       margin: 0 0 0 43px;
       padding: 0;
       border: none;
     }
-
     @include at-large {
       margin: 0 0 0 10px;
     }
-
     @media (min-width: 1170px) {
       margin: 0 0 0 43px;
     }
   }
-
   &__underline {
     top: 20px;
     left: 50%;
@@ -81,12 +64,10 @@
       top: 24px;
       width: 45%;
     }
-
-    .primary-nav__link--active > & {
+    .primary-nav__link--active>& {
       background-color: $main-orange;
     }
   }
-
   &__link {
     font-family: 'Open Sans';
     font-weight: 100;
@@ -95,5 +76,19 @@
     letter-spacing: .05rem;
     font-size: .9rem;
     position: relative;
+  }
+}
+
+.slidingas {
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  bottom: -40%;
+  &__inner {
+    width: 45%;
+    min-width: 30px;
+    height: 2px;
+    background-color: $main-orange;
+    margin: auto;
   }
 }
