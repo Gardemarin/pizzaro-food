@@ -10499,17 +10499,6 @@
 
 	    this.menu = (0, _jquery2.default)('.side-menu__nav');
 	    this.items = this.menu.find('.side-menu__nav__link');
-	    // new SlidingMenu({
-	    //   'menu': this.menu,
-	    //   'items': this.items,
-	    //   'duration': 200,
-	    //   'slidingClass': 'type-color-purple',
-	    //   'direction': 'y'
-	    // }, {
-	    //   'over': this.over,
-	    //   'leave': this.leave
-	    // });
-
 	  }
 
 	  _createClass(MobileMenu, [{
