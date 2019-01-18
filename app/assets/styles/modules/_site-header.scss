@@ -2,9 +2,6 @@
 .site-header {
   transition: all .7s;
 
-  // box-shadow: 0px 4px 16px #8400155c;
-  // background-color: $main-red;
-  // display: none;
   padding: 15px 0 10px;
   text-align: center;
   z-index: 10;
@@ -17,7 +14,7 @@
   padding-top: 0;
 
   @include at-medium {
-    transition: all 0;
+    transition: none;
     display: block;
     background-color: $main-red;
     position: initial;

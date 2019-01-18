@@ -4488,7 +4488,7 @@ Instead edit gulp/templates/sprite */
   padding-top: 0; }
   @media (min-width: 768px) {
     .site-header {
-      transition: all 0;
+      transition: none;
       display: block;
       background-color: #c00a27;
       position: initial;
@@ -4876,6 +4876,9 @@ Instead edit gulp/templates/sprite */
   border: rgba(255, 255, 255, 0.4) solid 1px;
   position: relative;
   display: block; }
+  @media (min-width: 345px) {
+    .food-nav {
+      display: none; } }
   @media (min-width: 768px) {
     .food-nav {
       border: none;
@@ -5110,42 +5113,57 @@ Instead edit gulp/templates/sprite */
       text-align: center; }
     .slider__content .line--left {
       border-top: 1px solid #fff;
-      width: 66px;
+      width: 40px;
       height: 10px;
       transform: skewY(0deg);
       display: inline-block;
       margin-right: 10px;
       margin-left: 80px; }
+      @media (min-width: 768px) {
+        .slider__content .line--left {
+          font-size: 66px; } }
     .slider__content .line--right {
       border-top: 1px solid #fff;
-      width: 125px;
+      width: 80px;
       height: 10px;
       transform: skewY(0deg);
       display: inline-block;
       margin-left: 25px; }
+      @media (min-width: 768px) {
+        .slider__content .line--right {
+          font-size: 125px; } }
     .slider__content h1 {
       margin: 0;
       margin-top: -30px;
       font-family: "Yanone Kaffeesatz", sans-serif;
-      font-size: 140px;
+      font-size: 70px;
       line-height: .8;
       letter-spacing: -0.05rem;
       text-shadow: 3px 3px 21px rgba(150, 150, 150, 0.76); }
+      @media (min-width: 768px) {
+        .slider__content h1 {
+          font-size: 140px; } }
     .slider__content h2 {
       margin: 0;
       font-family: "Yanone Kaffeesatz", sans-serif;
-      font-size: 82.06px;
+      font-size: 60px;
       font-weight: 100;
       text-transform: uppercase;
       text-shadow: 3px 3px 21px rgba(150, 150, 150, 0.76); }
+      @media (min-width: 768px) {
+        .slider__content h2 {
+          font-size: 82.06px; } }
     .slider__content h3 {
       font-family: "Yanone Kaffeesatz", sans-serif;
-      font-size: 30.02px;
+      font-size: 25px;
       text-transform: uppercase;
       font-weight: 300;
       margin-left: -76px; }
+      @media (min-width: 768px) {
+        .slider__content h3 {
+          font-size: 30.02px; } }
       .slider__content h3 span {
-        padding-right: 20px;
+        padding-right: 25px;
         font-weight: 400;
         font-size: 25px;
         letter-spacing: .1rem; }
